@@ -1,14 +1,13 @@
-import React from 'react'
+import React from "react"
 
-const Entrada = ({ children, texto }) => {
-    const [textpo, botao] = React.children.toArray(children)
+const Entrada = ({ children, textoLabel, type = "text" }) => {
+    const [texto, botao] = React.Children.toArray(children)
     return (
         <>
+            <label className="rotulo" htmlFor="nome">{textoLabel}</label>
             {texto}
-            <label className="rotulo" htmlFor="nome">{texto}</label>
-            <input type="text" id="nome" />
-            <p>Digite no campo acima</p>
-            {children}
+            <input type={type} id="nome" />
+            {botao}
         </>
     )
 }

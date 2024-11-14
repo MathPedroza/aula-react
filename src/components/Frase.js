@@ -1,13 +1,12 @@
-import style from "./Frase.modulo.css"
-import protoTypes from "prop-types" // tipo de variáveis
+import style from "./Frase.module.css"
+import PropTypes from "prop-types"
 
-const Frase = ({ frase, titulo = "Carregando título...", nota = (10) }) => { // parâmetro de entrada recebio pelo Props
+const Frase = ({ frase, titulo = "Carregador titulo...", nota = 0 }) => {
     return (
-        // encapsular dentro de um fragmento de jsx
         <>
-            <h1>{titulo}</h1>
+            <h1 className="display-1">{titulo}</h1>
             <br />
-            <p className={style.estiloFrase}>{Frase}Parágrafo</p>
+            <p className={style.estiloFrase}>{frase}</p>
             <br />
             <p>Nota: {nota}</p>
             <br />
@@ -15,10 +14,10 @@ const Frase = ({ frase, titulo = "Carregando título...", nota = (10) }) => { //
     )
 }
 
-Frase.protoTypes = {
-    nota: protoTypes.number.isRequired, // tipo número obrigatório
-    titulo: protoTypes.string,
-    frase: protoTypes.string,
+Frase.propTypes = {
+    nota: PropTypes.number.isRequired,
+    titulo: PropTypes.string,
+    frase: PropTypes.string
 }
 
 /* Não funciona mais o código abaixo 

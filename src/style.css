@@ -1,6 +1,8 @@
 .rotulo {
     font-size: 18px;
     color: blueviolet;
+    display: 'block';
+    margin-bottom: 4px;
 }
 
 .estiloBotao {
@@ -23,9 +25,11 @@
 }
 
 input {
-    margin: auto;
-    width: 768px;
-    background-color: #EEE;
-    padding: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-style: hidden;
+    width: 100%;
     border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
 }

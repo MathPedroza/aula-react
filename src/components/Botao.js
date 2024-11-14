@@ -1,14 +1,10 @@
 function enviar() {
-    return alert("Enviou")
+    return alert("Enviou!")
 }
 
 const Botao = ({ texto, funcao = enviar }) => {
-    function enviar() {
-        return alert("Enviou!")
-    }
-
     return (
-        <button className="estiloBotao" onClick={enviar} >{texto}</button>
+        <button className="estiloBotao" onClick={funcao} >{texto}</button>
     )
 }
 

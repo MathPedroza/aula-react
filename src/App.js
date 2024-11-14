@@ -1,38 +1,35 @@
 import Frase from "./components/Frase.js"
-import "bootstrap/dist/css/bootstrap.min.css"
 import "./style.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 import Botao from "./components/Botao.js";
 import Entrada from "./components/Entrada.js";
-import { Alert } from "bootstrap";
 
-function App() { //Sempre encapsulr as tags dentro de uma tag principal (Div)
-
+function App() {
     const textoLabel = "Nome:";
-
-    function volta() {
-        return Alert("Voltou")
-    }
-
     let texto = "Texto dinâmico!"
 
     var nota = 3
 
+    function voltar() {
+        return alert("Voltou!")
+    }
+
     return (
-        <div
-            className="divApp">
-            <Frase frase="Olá, tudo bem?" titulo="Título qualquer" />
-            <Entrada textoLabel={textoLabel} />
-            <Entrada textoLabel="Senha" >
-                <label htmlFor="termos">Aceita os termos</label>
-                <input type="checbox" id="termos" />
-                <Botao texto="Enviar texto" />
+        <div className="divApp">
+            <Frase frase="Olá tudo bem!" titulo="Titulo qualquer." nota={7} />
+            <Entrada textoLabel={textoLabel}>
+                <p>Olá digite o nome no campo abaixo!</p>
+            </Entrada>
+            <Entrada textoLabel="Senha: " type="password">
+                <p>Olá digite a senha no campo abaixo!</p>
+                <Botao texto="Enviar" />
             </Entrada>
             <Frase frase={texto} nota={9} />
             <Frase nota={10} />
             <Frase nota={nota} />
-            <Botao texto={"Voltar"} />
+            <Botao texto="Voltar" funcao={voltar} />
         </div>
     )
 }
 
-export default App // exportar a função/aplicação como um componente, para utilizar em outras páginas
+export default App
